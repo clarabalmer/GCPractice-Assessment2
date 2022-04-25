@@ -86,6 +86,8 @@ public class PracticeAssessment {
 	}
 
 	public static String[] getFirstWords(String str1, String str2, String str3) {
+		//separate three strings(assume sentences) by spaces
+		//put first word from each sentence into a new array
 		String[] sentence1 = str1.split(" ");
 		String[] sentence2 = str2.split(" ");
 		String[] sentence3 = str3.split(" ");
@@ -94,6 +96,8 @@ public class PracticeAssessment {
 	}
 	
 	public static int howFarApart(List<String> strList, String str1, String str2) {
+		//return the difference in indexes of the two strings in the list.
+		//if either is not in the list, throw exception
 		if (!strList.contains(str1) || !strList.contains(str2)) {
 			throw new IllegalArgumentException("must contain both strings");
 		}
@@ -101,6 +105,7 @@ public class PracticeAssessment {
 	}
 	
 	public static double makeADifference(double[] dubs, int index1, int index2) {
+		//return the difference of the element at index1 and the element at index2
 		try {
 			return dubs[index1] - dubs[index2];
 		} catch (ArrayIndexOutOfBoundsException e) {
@@ -109,6 +114,7 @@ public class PracticeAssessment {
 	}
 	
 	public static Set<Integer> neverTellMeTheOdds(int[] nums) {
+		//return new set of ints with all even numbers and no odds from int array
 		Set<Integer> result = new HashSet<Integer>();
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] % 2 == 0) {
@@ -119,6 +125,11 @@ public class PracticeAssessment {
 	}
 	
 	public static int fleeZero(int[] nums) {
+		//modify an array:
+		//if positive, add 1
+		//if negative, subtract 1
+		//if zero, do nothing
+		//return number of positive elements found.
 		int result = 0;
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] > 0) {
@@ -133,6 +144,8 @@ public class PracticeAssessment {
 	}
 
 	public static ArrayList<Character> updateList(ArrayList<Character> chars, char n) {
+		//if char n is contained in arraylist, return arraylist with no changes
+		//otherwise, add n to the list and return updated arraylist
 		if (!chars.contains(n)) {
 			chars.add(n);
 		}
